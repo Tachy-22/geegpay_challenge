@@ -7,27 +7,37 @@ import {
   CardBody,
   Image,
   CardFooter,
+  Chip,
 } from "@nextui-org/react";
+import { ArrowDownAz, Box, TrendingDown } from "lucide-react";
+import AreaChartUi from "../areaChart";
 
 export default function KPICard() {
   return (
-    <Card className="py-4 h-full w-full">
-      <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-        <p className="text-tiny uppercase font-bold">Daily Mix</p>
-        <small className="text-default-500">12 Tracks</small>
-        <h4 className="font-bold text-large">Frontend Radio</h4>
+    <Card className=" h-full w-full max-w-[20rem] mx-auto  border-0 shadow-md flex">
+      <CardHeader className="flex justify-between w-full ">
+        <div className=" border rounded-full p-1">
+          <Box />
+        </div>
+        <div className="w-[70%] flex justify-end">
+          <AreaChartUi />
+        </div>
       </CardHeader>
-      <CardBody className="overflow-visible py-2">
-        <Image
-          alt="Card background"
-          className="object-cover rounded-xl"
-          src="/images/hero-card-complete.jpeg"
-          width={270}
-        />
+      <CardBody className=" flex-col justify-center py-2">
+        {" "}
+        <div className="text-gray-400 text-semibold">Card Title</div>
+        <div className="text-extrabold tracking-wide text-xl">350</div>
       </CardBody>
-      <CardFooter>
-        <div className="">badge</div>
-        <div className="">vs. previous month</div>
+      <CardFooter className="flex  justify-between gap-1">
+        <Chip
+          startContent={<TrendingDown size={18} />}
+          variant="flat"
+          color="danger"
+          className="text-white"
+        >
+          23.5%
+        </Chip>
+        <p className="text-sm">vs. previous month</p>
       </CardFooter>
     </Card>
   );

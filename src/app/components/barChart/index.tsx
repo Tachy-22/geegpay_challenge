@@ -33,7 +33,7 @@ const BarChartUi = () => {
   ];
 
   return (
-    <div className=" w-full  flex flex-col rounded-xl bg-white p-4 shadow-xl ">
+    <div className=" w-full  flex flex-col rounded-xl bg-white p-4  border-0 shadow-md ">
       <div className="w-[98%]    rounded-xl p-2 flex justify-between items-center">
         <h2 className=" w-full font-semibold ">Sales Trends</h2>
         <div className="flex w-full justify-end items-center gap-2">

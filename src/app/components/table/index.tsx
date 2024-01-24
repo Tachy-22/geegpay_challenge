@@ -173,8 +173,9 @@ export default function DataTable() {
         );
       case "invoice":
         return (
-          <div>
-            <File />
+          <div className="text-gray-300 flex gap-2 ">
+            <File className="text-gray-300" />
+            <p className="text-black">View</p>
           </div>
         );
       default:
@@ -224,22 +225,24 @@ export default function DataTable() {
       <div className="flex flex-col gap-4">
         <div className="flex justify-between gap-3 items-end">
           <Input
+            variant="bordered"
             size="sm"
             isClearable
-            className="w-full sm:max-w-[44%] "
+            className="w-full sm:max-w-[44%] bg-white"
             placeholder="Search by name..."
             startContent={<SearchIcon size={18} />}
             value={filterValue}
             onClear={() => onClear()}
             onValueChange={onSearchChange}
           />
-          <div className="flex gap-3 items-center">
+          <div className=" gap-3 items-center hidden sm:flex">
             <p className="">filter by:</p>
             <Dropdown>
               <DropdownTrigger className="hidden sm:flex">
                 <Button
                   endContent={<ChevronDownIcon className="text-sm" />}
-                  variant="flat"
+                  variant="solid"
+                  className="bg-blue-400 text-white"
                 >
                   Status
                 </Button>
@@ -265,7 +268,8 @@ export default function DataTable() {
               <DropdownTrigger className="hidden sm:flex">
                 <Button
                   endContent={<ChevronDownIcon className="text-sm" />}
-                  variant="flat"
+                  variant="solid"
+                  className="bg-blue-400 text-white"
                 >
                   Columns
                 </Button>
@@ -365,7 +369,7 @@ export default function DataTable() {
   ]);
 
   return (
-    <div className=" min-w-fit w-full">
+    <div className="  w-full">
       <Table
         aria-label="Example table with custom cells, pagination and sorting"
         isHeaderSticky
