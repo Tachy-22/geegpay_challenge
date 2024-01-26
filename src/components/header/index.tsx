@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import SearchInput from "./SearchInput";
-import { Card, Skeleton } from "@nextui-org/react";
+import { Badge, Button, Card, Skeleton } from "@nextui-org/react";
 import UserDropDown from "./UserDropDown";
 import { HambergerMenu, Notification } from "iconsax-react";
 import DateUi from "./DateUi";
@@ -30,8 +30,17 @@ const Header = () => {
           <div className="col-span-1  justify-between items-center hidden sm:flex">
             <DateUi />
             <div className="w-full flex items-center justify-center   ">
-              <div className="dark: p-2 border-stone-500 mx-auto rounded-full border ">
-                <Notification size="24" color="#697689" variant="Outline" />
+              <div className="dark: p-1 border-stone-500 mx-auto rounded-full border ">
+                <Badge content="9" shape="circle" color="danger">
+                  <Button
+                    radius="full"
+                    isIconOnly
+                    aria-label="more than 99 notifications"
+                    variant="light"
+                  >
+                    <Notification size={24} />
+                  </Button>
+                </Badge>{" "}
               </div>
             </div>
             <UserDropDown />

@@ -31,7 +31,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ color, value, label }) => (
       className="w-full"
     />
     <div className="w-full flex justify-between py-4">
-      <span className="">$180,000</span>
+      <span className="">${value * 7},000,000</span>
       <span className="">+ {value}%</span>
     </div>
   </div>

@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import jsPDF from "jspdf";
 import {
   Table,
   TableHeader,
@@ -128,6 +129,30 @@ export default function DataTable() {
     });
   }, [sortDescriptor, items]);
 
+    const handleDownload = () => {
+      // Create a new jsPDF instance
+      const pdf = new jsPDF();
+
+      // Add content to the PDF
+      pdf.text("Dummy Invoice", 10, 10);
+      pdf.text("Transaction details:", 10, 20);
+
+      // Example transaction details
+      const transactionDetails = [
+        "Transaction ID: 12345",
+        "Date: " + new Date().toLocaleDateString(),
+        "Amount: $100.00",
+      ];
+
+      // Add transaction details to the PDF
+      transactionDetails.forEach((detail, index) => {
+        pdf.text(detail, 10, 30 + index * 10);
+      });
+
+      // Save the PDF with a specific name
+      pdf.save("invoice.pdf");
+    };
+
   const renderCell = React.useCallback((user: User, columnKey: keyof User) => {
     const statusColorMap: {
       active: string;
@@ -140,7 +165,6 @@ export default function DataTable() {
       // Add other status-color mappings as needed
     };
     const cellValue = user[columnKey];
-    const userStatus = statusColorMap[user.status as keyof Status] as Color;
     switch (columnKey) {
       case "name":
         return (
@@ -175,9 +199,26 @@ export default function DataTable() {
         );
       case "invoice":
         return (
-          <div className=" gray-300/50 flex gap-2 ">
-            <File className="text-gray-300" />
-            <p className=" gray-400/90">View</p>
+          <div className="relative flex justify-start items-center gap-2 w-full   rounded-md">
+            <Dropdown className="bg-background  w-full ">
+              <DropdownTrigger>
+                <Button
+                  size="lg"
+                  variant="light"
+                  className="w-fit  flex justify-start px-0"
+                >
+                  <div className=" gray-300/50 flex gap-2 w-full   justify-start px-2">
+                    <File className="text-gray-300 " />
+                    <p className=" gray-400/90">View</p>
+                  </div>
+                </Button>
+              </DropdownTrigger>
+              <DropdownMenu>
+                <DropdownItem>View</DropdownItem>
+                <DropdownItem onClick={handleDownload}>Download</DropdownItem>
+                <DropdownItem>Delete</DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
           </div>
         );
       default:
@@ -233,7 +274,7 @@ export default function DataTable() {
             isClearable
             classNames={{
               base: ["max-w-[40rem]"],
-              inputWrapper: ["bg-white","dark:bg-stone-700"],
+              inputWrapper: ["bg-white", "dark:bg-stone-700"],
             }}
             placeholder="Search by name..."
             startContent={<SearchIcon size={18} />}
@@ -385,7 +426,7 @@ export default function DataTable() {
           wrapper: "max-h-[382px] ",
         }}
         selectedKeys={selectedKeys}
-        selectionMode="multiple"
+       // selectionMode="multiple"
         sortDescriptor={setSortDescriptor as SortDescriptor}
         topContent={topContent}
         topContentPlacement="outside"

@@ -86,7 +86,7 @@ const Nav: React.FC = () => {
     <div
       className={` top-0 min-h-screen shadow-none shadow-0 rounded-0 rounded-none duration-1000  pt-[1rem] left-0 transition-all    easein overflow-hidden  md:gap-[1.5rem] gap-[1rem] z-50    border-r  flex flex-col justify-start bg-stone-100/80 dark:bg-stone-900 dark:border-stone-600  ${
         isOpen
-          ? "w-full md:max-w-[8rem] max-w-[3rem] md:items-start items-center md:min-w-[10rem] min-w-[3.5rem] "
+          ? "w-full md:max-w-fit max-w-[3rem] md:items-start items-center md:min-w-fit min-w-[3.5rem] "
           : "items-center w-fit md:max-w-[4.5rem] max-w-[3rem] min-w-[3.5rem]"
       }`}
     >
@@ -99,7 +99,6 @@ const Nav: React.FC = () => {
       />
 
       <div className="flex flex-col justify-between h-full  overflow-y-auto overflow-x-hidden">
-        
         <div
           className="   flex flex-col w-full"
           onMouseEnter={handleHover}
@@ -144,14 +143,14 @@ const Nav: React.FC = () => {
           onClick={handleToggle}
         >
           <div
-            className={`" w-fit h-full text-gray-400  flex justify-center items-center text-grey-300 ${
+            className={`" w-fit h-full text-gray-400   flex justify-center items-center text-grey-300 ${
               isOpen ? "" : "mx-auto"
             }`}
           >
             {isOpen ? (
-              <ArrowLeftCircle size={24} />
+              <ArrowLeftCircle size={28} />
             ) : (
-              <ArrowRightCircle size={24} />
+              <ArrowRightCircle size={28} />
             )}
           </div>
           <span
