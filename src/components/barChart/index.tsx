@@ -154,16 +154,19 @@ const BarChartUi = () => {
   };
 
   return (
-    <Card className="border-0 shadow-md md:max-h-[50rem] min-h-fit  h-full   ">
+    <Card className="border-0 shadow-md md:max-h-[50rem] min-h-[10rem] max-h-[20rem]  h-full   ">
       <div className="w-full  max-h-full h-full  flex flex-col rounded-xl  p-4 border-0 shadow-md ">
         <div className=" md:w-[98%]  w-full rounded-xl p-2 flex justify-between items-center  ">
           <Skeleton className="rounded-md" isLoaded={hasLoaded}>
             {" "}
-            <h2 className="w-fit min-w-[7rem] font-semibold ">Sales Trends</h2>
+            <h2 className="w-fit min-w-[9rem] font-semibold ">Sales Trends</h2>
           </Skeleton>
 
           <div className="flex w-full justify-end items-center gap-2">
-            <Skeleton className="rounded-md" isLoaded={hasLoaded}>
+            <Skeleton
+              className="rounded-md md:flex hidden"
+              isLoaded={hasLoaded}
+            >
               <label htmlFor="" className="w-fit">
                 Sort by:
               </label>
@@ -225,7 +228,7 @@ const BarChartUi = () => {
         <div
           className={` ${
             hasLoaded ? "" : "hidden"
-          } overflow-x-auto md:overflow-hidden  w-full max-h-[30rem]  lg:-mt-[3rem]    h-full  -mt-[4rem] `}
+          } overflow-x-auto md:overflow-hidden overflow-y-hidden  w-full md:max-h-[30rem]  pb-3 sm:pb-0 lg:-mt-[3rem] scale-[107%] md:scale-100   h-full  -mt-[4rem] `}
         >
           {" "}
           <VictoryChart
@@ -234,7 +237,7 @@ const BarChartUi = () => {
             domainPadding={20}
             style={{
               parent: {
-                margin: "0rem 0px 0rem 1.5rem",
+                margin: "0rem 0px 0rem 1rem",
                 minWidth: "40rem",
                 minHeight: "20rem",
                 height: "100%",
