@@ -33,10 +33,10 @@ interface NavIcon {
 }
 
 const navIcons: NavIcon[] = [
-  { id: 2, icon: <Element3 />, label: "Layout" },
-  { id: 6, icon: <TrendUp />, label: "Info" },
-  { id: 4, icon: <Profile2User />, label: "Members" },
-  { id: 3, icon: <Box />, label: "Settings" },
+  { id: 1, icon: <Element3 />, label: "Layout" },
+  { id: 2, icon: <TrendUp />, label: "Info" },
+  { id: 3, icon: <Profile2User />, label: "Members" },
+  { id: 4, icon: <Box />, label: "Settings" },
   { id: 5, icon: <DiscountShape />, label: "Discount" },
   { id: 6, icon: <InfoCircle />, label: "Info" },
 
@@ -99,6 +99,7 @@ const Nav: React.FC = () => {
       />
 
       <div className="flex flex-col justify-between h-full  overflow-y-auto overflow-x-hidden">
+        
         <div
           className="   flex flex-col w-full"
           onMouseEnter={handleHover}
