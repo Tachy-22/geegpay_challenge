@@ -7,7 +7,7 @@ import Header from "./components/header";
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-3 justify-start items-center  relative   overflow-hidden h-screen ">
+    <main className="flex flex-col gap-3 justify-start items-center  relative   overflow-hidden h-screen bg-gray-100 dark:bg-stone-950">
       <Header />
       <div className=" flex px-[1.5rem]  pt-[5rem]  h-full flex-col gap-6  w-full  overflow-y-auto -">
         <section className="grid xl:grid-cols-3  grid-cols-1  gap-6  ">

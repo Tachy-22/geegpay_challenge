@@ -157,11 +157,11 @@ const BarChartUi = () => {
             </label>
             <Dropdown
               classNames={{
-                base: "before:bg-indigo-200 relative", // change arrow background
+                base: " relative", // change arrow background
                 content: "p-0  bg-background",
               }}
             >
-              <DropdownTrigger className="flex dark:text-gray-200 z-30 ">
+              <DropdownTrigger className="flex  z-30 ">
                 <Button
                   endContent={<ChevronDownIcon className="text-sm" />}
                   variant="bordered"
@@ -175,19 +175,8 @@ const BarChartUi = () => {
                 disallowEmptySelection
                 aria-label="Table Columns"
                 closeOnSelect={false}
-                className=" dark:bg-indigo-900 rounded-xl  dark:text-gray-200"
-                itemClasses={{
-                  base: [
-                    "rounded-md",
-                    "transition-opacity",
-                    "data-[hover=true]:text-foreground",
-                    "data-[hover=true]:bg-default-100",
-                    "dark:data-[hover=true]:bg-gray-400/90",
-                    "data-[selectable=true]:focus:bg-default-50",
-                    "data-[pressed=true]:opacity-70",
-                    "data-[focus-visible=true]:ring-default-500",
-                  ],
-                }}
+                className="  rounded-xl  "
+               
               >
                 <DropdownItem onClick={() => handleRangeChange("daily")}>
                   Daily

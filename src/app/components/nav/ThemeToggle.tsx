@@ -26,10 +26,10 @@ const ThemeToggle = () => {
   }
 
   return (
-    <div className="relative flex w-fit items-center rounded-full bg-white dark:bg-gray-800 p-1">
+    <div className="relative flex w-fit items-center rounded-full bg-white dark:bg-gray-800/80 p-1">
       <button
         className={`${TOGGLE_CLASSES}  ${
-          theme === "light" ? "text-white" : "text-yellow-600"
+          theme === "light" ? "text-white " : "text-yellow-600"
         }`}
         onClick={() => {
           setTheme("light");
@@ -56,11 +56,11 @@ ${theme === "dark" ? "text-white" : "text-slate-400"}`}
         <motion.span
           layout
           transition={{ type: "spring", damping: 15, stiffness: 250 }}
-          className={`" h-full w-1/2 rounded-full     bg-gradient-to-r  ${
+          className={` h-full w-1/2 rounded-full       ${
             theme === "dark"
               ? "bg-gradient-to-l from-white to-transparent"
-              : "bg-gradient-to-r to-emerald-500 from-transparent"
-          }"`}
+              : "bg-gradient-to-l to-emerald-500 from-transparent"
+          }`}
         />
       </div>
     </div>

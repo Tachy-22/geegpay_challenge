@@ -9,8 +9,7 @@ const columns = [
 
 const statusOptions = [
   { name: "Paid", uid: "paid" },
-  { name: "Refund", uid: "prefund" },
-  { name: "Pending", uid: "pending" },
+  { name: "Refund", uid: "refund" },
 ];
 
 const users = [

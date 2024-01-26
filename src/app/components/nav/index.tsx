@@ -89,9 +89,8 @@ const Nav: React.FC = () => {
   }, []);
 
   return (
-    <Card
-      style={{ transitionDuration: "1s" }}
-      className={` top-0 h-screen sdahow-none rounded-0 rounded-none  left-0 transition-all min-w-[3rem]  easein overflow-hidden  md:gap-[1.5rem] gap-[1rem] z-50    border-r  flex flex-col justify-start dark:bg-slate-950 dark:border-gray-500  ${
+    <div
+      className={` top-0 h-screen shadow-none shadow-0 rounded-0 rounded-none duration-1000  left-0 transition-all md:min-w-[3.5rem] min-w-[3rem]  easein overflow-hidden  md:gap-[1.5rem] gap-[1rem] z-50    border-r  flex flex-col justify-start bg-stone-100 dark:bg-stone-900 dark:border-stone-600  ${
         isOpen
           ? "w-full md:max-w-[8rem] max-w-[4rem] md:items-start items-center"
           : "items-center w-fit md:max-w-[4.5rem] max-w-[3rem] "
@@ -102,18 +101,17 @@ const Nav: React.FC = () => {
         alt="logo"
         width={100}
         height={150}
-        className="rounded-md md:p-4 p-2"
+        className="rounded-md md:p-4 p-2 h-[4.5rem] w-[4.5rem]"
       />
       <div
-        className=" md:gap-[1.5rem] gap-[1rem] flex flex-col w-full"
+        className="   flex flex-col w-full"
         onMouseEnter={handleHover}
         onMouseLeave={handleLeave}
       >
         {navIcons.map(({ id, icon, label }) => (
           <div
-            style={{ transitionDuration: "2s" }}
             key={id}
-            className={` transition-transform  flex items-center     hover:backdrop-brightness-95  lg:p-3 p-2 py-3    h-fit cursor-pointer hover:border-r-2 hover:border-slate-500 md:p-4 p-2  ${
+            className={` transition-all  duration-1000 flex items-center     hover:backdrop-brightness-95  lg:p-3 p-2 py-3    h-fit cursor-pointer hover:border-r-2 hover:border-slate-500 md:p-4 p-2  ${
               isOpen
                 ? "gap-3 w-full md:justify-start justify-center"
                 : "gap-0 w-full justify-center"
@@ -130,9 +128,9 @@ const Nav: React.FC = () => {
                 })}
             </div>
             <span
-              className={`  transition-transform   ${
+              className={`  transition-all   ${
                 isOpen
-                  ? "opacity-1  w-full md:block hidden "
+                  ? "opacity-1  w-[4rem] md:block hidden "
                   : "opacity-0 w-0 min-w-[0rem] md:block hidden  scale-[60%] md:scale-100 md:block hidden "
               }`}
             >
@@ -142,8 +140,7 @@ const Nav: React.FC = () => {
         ))}
       </div>
       <button
-        style={{ transitionDuration: "2s" }}
-        className={` transition-transform  flex items-center  md:justify-start justify-center hover:backdrop-brightness-95  lg:p-3 p-2 py-3    h-fit cursor-pointer hover:border-r hover:border-slate-500 md:p-4 p-2  ${
+        className={` transition-all  flex items-center duration-1000  md:justify-start justify-center hover:backdrop-brightness-95  lg:p-3 p-2 py-3    h-fit cursor-pointer hover:border-r hover:border-slate-500 md:p-4 p-2  ${
           isOpen ? "gap-3 w-full" : "gap-0 w-full "
         }`}
         onClick={handleToggle}
@@ -177,7 +174,7 @@ const Nav: React.FC = () => {
       >
         <ThemeToggle />
       </div>
-    </Card>
+    </div>
   );
 };
 

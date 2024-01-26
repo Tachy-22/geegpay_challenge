@@ -233,6 +233,7 @@ export default function DataTable() {
             isClearable
             classNames={{
               base: ["max-w-[40rem]"],
+              inputWrapper: ["bg-white","dark:bg-stone-700"],
             }}
             placeholder="Search by name..."
             startContent={<SearchIcon size={18} />}
@@ -274,8 +275,7 @@ export default function DataTable() {
                 <Button
                   endContent={<ChevronDownIcon className="text-sm" />}
                   variant="faded"
-                  className=" text-white"
-                  color="primary"
+                  color="default"
                 >
                   Columns
                 </Button>

@@ -53,7 +53,7 @@
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: transparent transparent;
+  scrollbar-color: gray transparent;
 
 }
 
@@ -66,7 +66,7 @@
 
   * {
     scrollbar-width: thin;
-    scrollbar-color: rgba(255, 255, 255, 0) transparent;
+    scrollbar-color: rgb(192, 190, 190) transparent;
 
 
   }
