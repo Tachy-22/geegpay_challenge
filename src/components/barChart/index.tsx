@@ -222,7 +222,7 @@ const BarChartUi = () => {
           isLoaded={hasLoaded}
           className={` ${
             hasLoaded ? "hidden" : ""
-          } rounded-xl md:max-h-[38rem] max-h-[30rem] h-full w-full "`}
+          } rounded-xl md:max-h-[38rem] max-h-[30rem] md:min-h-[30rem] min-h-[24rem] h-full w-full "`}
         />
 
         <div
