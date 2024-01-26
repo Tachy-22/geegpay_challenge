@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Card,
   CardHeader,
@@ -8,6 +8,7 @@ import {
   Image,
   CardFooter,
   Chip,
+  Skeleton,
 } from "@nextui-org/react";
 import { ArrowDownAz, Box, TrendingDown } from "lucide-react";
 import AreaChartUi from "../areaChart";
@@ -39,10 +40,15 @@ const KPICard: React.FC<KPICardProps> = ({
   value,
   trendPercentage,
 }) => {
+  const [hasLoaded, setHasLoaded] = useState(false);
+  useEffect(() => {
+    console.log("has loaded");
+    setHasLoaded(true);
+  }, []);
   return (
     <Card className="h-full w-full max-w-[20rem] min-w-[20rem] lg:min-w-full mx-auto border-0 shadow-md flex  ">
-      <CardHeader className="flex  justify-between w-full py-0">
-        <div className="border rounded-full p-1">
+      <CardHeader className="flex  justify-between items-center  w-full py-2">
+        <div className=" border-gray-400 rounded-full p-1 border ">
           {icon &&
             React.cloneElement(icon, {
               size: "28",
@@ -50,13 +56,24 @@ const KPICard: React.FC<KPICardProps> = ({
               variant: "Bulk",
             })}
         </div>
-        <div className="w-[40%] flex justify-end">
-          <AreaChartUi iconColor={iconColor as string} index={0} />
+
+        <div className="w-[60%] flex justify-end  h-[3.4rem] overflow-hidden rounded-md">
+          <Skeleton isLoaded={hasLoaded} className="rounded-md  justify-end  w-full  p-0">
+            <AreaChartUi iconColor={iconColor as string} index={0} />
+          </Skeleton>
         </div>
       </CardHeader>
-      <CardBody className="flex-col justify-center py-2">
-        <div className="text-gray-400 text-semibold text-lg">{title}</div>
-        <div className="text-extrabold tracking-wide text-2xl">{value}</div>
+      <CardBody className="flex-col justify-center py-2 gap-2">
+        <Skeleton isLoaded={hasLoaded} className="rounded-md  ">
+          <div className="text-gray-400 text-semibold text-lg w-fit">
+            {title}
+          </div>
+        </Skeleton>
+        <Skeleton isLoaded={hasLoaded} className="rounded-md ">
+          <div className="text-extrabold tracking-wide text-2xl w-fit">
+            {value}
+          </div>
+        </Skeleton>
       </CardBody>
       <CardFooter className="flex justify-between gap-1">
         <Chip

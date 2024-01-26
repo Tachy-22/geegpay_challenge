@@ -168,7 +168,7 @@ export default function DataTable() {
             className="capitalize"
             color={`${cellValue === "paid" ? "success" : "danger"}`}
             size="sm"
-            variant="flat"
+            variant="light"
           >
             {cellValue}
           </Chip>

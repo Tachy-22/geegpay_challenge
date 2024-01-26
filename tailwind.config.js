@@ -10,6 +10,12 @@ const config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
+  screens: {
+    sm: "500px",
+    md: "720px",
+    lg: "1100px",
+    xl: "2530px",
+  },
   theme: {
     extend: {
       backgroundImage: {
@@ -18,12 +24,11 @@ const config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       screens: {
-        tablet: "640px",
-
-        laptop: "1024px",
-
-        desktop: "1280px",
-        // => @media (min-width: 1280px) { ... }
+        sm: "500px",
+        md: "720px",
+        lg: "1100px",
+        xl: "1400px",
+        xxl: "2100px",
       },
       keyframes: {
         "accordion-down": {

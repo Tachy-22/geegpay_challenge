@@ -6,9 +6,10 @@ import {
   DropdownItem,
   DropdownMenu,
   DropdownTrigger,
+  Skeleton,
 } from "@nextui-org/react";
 import { ChevronDownIcon } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   EventPropTypeInterface,
   VictoryBarTTargetType,
@@ -22,6 +23,12 @@ import {
 // Import statements...
 
 const BarChartUi = () => {
+  const [hasLoaded, setHasLoaded] = useState(false);
+  useEffect(() => {
+    console.log("has loaded");
+    setHasLoaded(true);
+  }, []);
+
   const generateRandomData = () => {
     const currentDate = new Date();
     const currentYear = currentDate.getFullYear();
@@ -32,7 +39,7 @@ const BarChartUi = () => {
     for (let year = currentYear - 1; year <= currentYear; year++) {
       for (let month = 0; month < 12; month++) {
         const timestamp = new Date(year, month, 1).toISOString();
-        const sales = Math.floor(Math.random() * 10000) + 1000; // Random sales between 1000 and 10000
+        const sales = Math.floor(Math.random() * 50000) + 1000; // Random sales between 1000 and 10000
 
         allData.push({ timestamp, y: sales });
       }
@@ -150,11 +157,18 @@ const BarChartUi = () => {
     <Card className="border-0 shadow-md md:max-h-[50rem] min-h-fit  h-full   ">
       <div className="w-full  max-h-full h-full  flex flex-col rounded-xl  p-4 border-0 shadow-md ">
         <div className=" md:w-[98%]  w-full rounded-xl p-2 flex justify-between items-center  ">
-          <h2 className="w-full font-semibold">Sales Trends</h2>
+          <Skeleton className="rounded-md" isLoaded={hasLoaded}>
+            {" "}
+            <h2 className="w-fit min-w-[7rem] font-semibold ">Sales Trends</h2>
+          </Skeleton>
+
           <div className="flex w-full justify-end items-center gap-2">
-            <label htmlFor="" className="w-fit">
-              Sort by:
-            </label>
+            <Skeleton className="rounded-md" isLoaded={hasLoaded}>
+              <label htmlFor="" className="w-fit">
+                Sort by:
+              </label>
+            </Skeleton>
+
             <Dropdown
               classNames={{
                 base: " relative", // change arrow background
@@ -193,14 +207,26 @@ const BarChartUi = () => {
         <svg style={{ height: 0 }}>
           <defs>
             <linearGradient id="myGradient2" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#25944a" />
-              <stop offset="80%" stopColor="#22f8a633" />
-              <stop offset="90%" stopColor="#34eea733" />
+              <stop offset="0%" stopColor="#05c967c5" />
+
+              <stop offset="95%" stopColor="#34eea733" />
               <stop offset="100%" stopColor="#08fd9f3b" />
             </linearGradient>
           </defs>
         </svg>
-        <div className="overflow-x-auto w-full max-h-full h-full  -mt-[3.3rem] ">
+
+        <Skeleton
+          isLoaded={hasLoaded}
+          className={` ${
+            hasLoaded ? "hidden" : ""
+          } rounded-xl md:max-h-[38rem] max-h-[30rem] h-full w-full "`}
+        />
+
+        <div
+          className={` ${
+            hasLoaded ? "" : "hidden"
+          } overflow-x-auto md:overflow-hidden  w-full max-h-[30rem]  lg:-mt-[3rem]    h-full  -mt-[4rem] `}
+        >
           {" "}
           <VictoryChart
             width={1060}
@@ -208,9 +234,9 @@ const BarChartUi = () => {
             domainPadding={20}
             style={{
               parent: {
-                //  margin: "-2rem 0px 0rem 0rem",
-                minWidth: "50rem",
-                minHeight: "100%",
+                margin: "0rem 0px 0rem 1.5rem",
+                minWidth: "40rem",
+                minHeight: "20rem",
                 height: "100%",
               },
             }}
@@ -224,13 +250,13 @@ const BarChartUi = () => {
               axisComponent={<></>}
             />
             <VictoryBar
-              barWidth={20}
+              barWidth={32}
               name="bar"
               style={{
                 data: { fill: `${barGradient}` },
               }}
               data={filteredData}
-              cornerRadius={{ top: 10 }}
+              cornerRadius={{ top: 12 }}
               animate={{
                 duration: 2000,
                 easing: "bounce",

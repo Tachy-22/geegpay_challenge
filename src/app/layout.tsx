@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Geegpay",
-  description: "A frontend challenge | J.E.",
+  description: "A frontyend challenge | J.E.",
 };
 
 export default function RootLayout({
@@ -23,7 +23,7 @@ export default function RootLayout({
         <NextProvider>
           <div className="flex relative h-screen overflow-hidden w-screen">
             <Nav />
-            <div className="max-h-screen overflow-hidden"> {children}</div>{" "}
+            <div className="max-h-screen overflow-hidden w-screen"> {children}</div>{" "}
           </div>
         </NextProvider>
       </body>

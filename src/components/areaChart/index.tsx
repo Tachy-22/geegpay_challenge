@@ -11,11 +11,11 @@ const AreaChartUi = ({
   const generateDataPoints = (count: number) => {
     const data = [];
     for (let i = 1; i <= count; i++) {
-      data.push({ x: i, y: Math.random() * 50 + 60 });
+      data.push({ x: i, y: Math.random() * 40 + 60 });
     }
     return data;
   };
-  const dataPoints = useMemo(() => generateDataPoints(40), []);
+  const dataPoints = useMemo(() => generateDataPoints(50), []);
 
   const linearGradientColor = useMemo(
     () => (iconColor === "success" ? "#29903a" : "#f31212"),
@@ -23,15 +23,17 @@ const AreaChartUi = ({
   );
 
   return (
-    <div className="w-full h-full ">
+    <div className=" object-fit -mt-[1rem]">
       <svg style={{ height: 0 }}>
         <defs>
           <linearGradient id="myGradient" x1="0%" y1="0%" x2="0%" y2="100%">
             <stop offset="0%" stopColor="#94e1a1" />
-            <stop offset="10%" stopColor="#94e1a1" />
+            <stop offset="10%" stopColor="#06f54e56" />
 
-            <stop offset="30%" stopColor="#c3efc9" />
-            <stop offset="100%" stopColor="#5af16113" />
+            <stop offset="30%" stopColor="#06f58525" />
+            <stop offset="50%" stopColor="#06f58511" />
+
+            <stop offset="100%" stopColor="#06f59900" />
           </linearGradient>
         </defs>
       </svg>
@@ -39,18 +41,21 @@ const AreaChartUi = ({
         <defs>
           <linearGradient id="myGradient4" x1="0%" y1="0%" x2="0%" y2="100%">
             <stop offset="0%" stopColor="#ff6060" />
-            <stop offset="10%" stopColor="#ff6060" />
+            <stop offset="5%" stopColor="#f5060627" />
 
-            <stop offset="30%" stopColor="#ff9a9a" />
-            <stop offset="100%" stopColor="#ff00001c" />
+            <stop offset="30%" stopColor="#f506064f" />
+            <stop offset="50%" stopColor="#f5060611" />
+
+            <stop offset="100%" stopColor="#f5060600" />
           </linearGradient>
         </defs>
       </svg>
       <VictoryGroup colorScale={["tomato", "orange"]}>
         <VictoryArea
+          width={800}
           animate={{
             duration: 2000,
-            onLoad: { duration: 1000 },
+            onLoad: { duration: 1500 },
             easing: "bounceInOut",
           }}
           style={{

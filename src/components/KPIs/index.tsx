@@ -8,29 +8,29 @@ export default function KPIs() {
     {
       icon: <BoxAdd />,
       iconColor: "success",
-      title: "Card Title 1",
+      title: "Total",
       value: 350,
       trendPercentage: "23.5%",
     },
     {
       icon: <I3DRotate />,
       iconColor: "danger",
-      title: "Card Title 2",
+      title: "Total Refund",
       value: 500,
       trendPercentage: "15.2%",
     },
     {
       icon: <ShoppingCart />,
       iconColor: "danger",
-      title: "Card Title 1",
-      value: "$120,000",
+      title: "Average Sales",
+      value: "1567",
       trendPercentage: "23.5%",
     },
     {
       icon: <Coin1 />,
       iconColor: "success",
-      title: "Card Title 2",
-      value: "$100,000",
+      title: "Total income",
+      value: "$350,000",
       trendPercentage: "15.2%",
     },
     // Add more objects as needed
@@ -38,7 +38,7 @@ export default function KPIs() {
 
   return (
     <div className="w-full overflow-hidden">
-      <div className="xl:grid hidden xl:grid-cols-2  grid-cols-4 xl:grid-rows-2 w-full gap-6 h-full pb-3 xl:pb-0 ">
+      <div className="lg:grid hidden xl:grid-cols-2  grid-cols-4 xl:grid-rows-2 w-full gap-6 h-full pb-3 xl:pb-0 ">
         {kpiData.map((kpi, index) => (
           <div className="" key={index}>
             <KPICard
@@ -63,7 +63,7 @@ export default function KPIs() {
       <div className="w-full overflow-x-auto">
         <ul
           style={{ transitionDuration: "3000ms" }}
-          className=" xl:hidden flex 2 w-full gap-6 carousel-primary   transition-transform duration-[300ms] flex w-fit py-[1.5rem]  group gap-2 lg;gap-4 "
+          className=" lg:hidden flex 2 w-full gap-6 carousel-primary   transition-transform duration-[300ms] py-[1.5rem]  group lg:gap-4 "
         >
           {kpiData.map((kpi, index) => (
             <div className="" key={index}>
