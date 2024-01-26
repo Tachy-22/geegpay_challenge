@@ -72,21 +72,21 @@ const Nav: React.FC = () => {
     });
   };
 
-  useEffect(() => {
-    const handleResize = () => {
-      const screenWidth = window.innerWidth;
-      setIsOpen(screenWidth >= 768); // Adjust the breakpoint as needed
-    };
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     const screenWidth = window.innerWidth;
+  //     setIsOpen(screenWidth >= 768); // Adjust the breakpoint as needed
+  //   };
 
-    window.addEventListener("resize", handleResize);
+  //   window.addEventListener("resize", handleResize);
 
-    // Initial check on mount
-    handleResize();
+  //   // Initial check on mount
+  //   handleResize();
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("resize", handleResize);
+  //   };
+  // }, []);
 
   return (
     <div
