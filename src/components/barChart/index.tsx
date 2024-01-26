@@ -228,7 +228,8 @@ const BarChartUi = () => {
         <div
           className={` ${
             hasLoaded ? "" : "hidden"
-          } overflow-x-auto md:overflow-x-hidden overflow-y-hidden   w-full md:max-h-[30rem]  pb-3 sm:pb-0 lg:-mt-[3rem] scale-[107%] md:scale-100   h-full  -mt-[4rem] `}
+          } overflow-x-auto md:overflow-x-hidden overflow-y-hidden scrollVisible
+  w-full md:max-h-[30rem]  pb-3 sm:pb-0 lg:-mt-[3rem] scale-[107%] md:scale-100   h-full  -mt-[4rem] `}
         >
           {" "}
           <VictoryChart
