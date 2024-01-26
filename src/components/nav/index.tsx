@@ -38,14 +38,14 @@ const navIcons: NavIcon[] = [
   { id: 4, icon: <Profile2User />, label: "Members" },
   { id: 3, icon: <Box />, label: "Settings" },
   { id: 5, icon: <DiscountShape />, label: "Discount" },
-  { id: 5, icon: <InfoCircle />, label: "Info" },
+  { id: 6, icon: <InfoCircle />, label: "Info" },
 
   // Add more icons as needed
 ];
 const navIcons2: NavIcon[] = [
-  { id: 2, icon: <ArrowCircleRight2 />, label: "Layout" },
-  { id: 6, icon: <Setting2 />, label: "Info" },
-  { id: 4, icon: <ArrowCircleLeft2 />, label: "Members" },
+  { id: 7, icon: <ArrowCircleRight2 />, label: "Layout" },
+  { id: 8, icon: <Setting2 />, label: "Info" },
+  { id: 9, icon: <ArrowCircleLeft2 />, label: "Members" },
 
   // Add more icons as needed
 ];
