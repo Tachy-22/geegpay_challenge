@@ -13,16 +13,15 @@ import {
 } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 import Image from "next/image";
-import Logo from "../../../../public/log.png";
+import Logo from "../../../public/Vector.svg";
 import {
   Box,
   DiscountShape,
   Element3,
-  Icon,
   Profile2User,
   TrendUp,
+  InfoCircle,
 } from "iconsax-react";
-import { Card } from "@nextui-org/react";
 
 interface NavIcon {
   id: number;
@@ -32,10 +31,11 @@ interface NavIcon {
 
 const navIcons: NavIcon[] = [
   { id: 2, icon: <Element3 />, label: "Layout" },
-  { id: 3, icon: <Box />, label: "Settings" },
-  { id: 4, icon: <Profile2User />, label: "Info" },
-  { id: 5, icon: <DiscountShape />, label: "Info" },
   { id: 6, icon: <TrendUp />, label: "Info" },
+  { id: 4, icon: <Profile2User />, label: "Members" },
+  { id: 3, icon: <Box />, label: "Settings" },
+  { id: 5, icon: <DiscountShape />, label: "Discount" },
+  { id: 5, icon: <InfoCircle />, label: "Info" },
 
   // Add more icons as needed
 ];
@@ -90,10 +90,10 @@ const Nav: React.FC = () => {
 
   return (
     <div
-      className={` top-0 h-screen shadow-none shadow-0 rounded-0 rounded-none duration-1000  left-0 transition-all md:min-w-[3.5rem] min-w-[3rem]  easein overflow-hidden  md:gap-[1.5rem] gap-[1rem] z-50    border-r  flex flex-col justify-start bg-stone-100 dark:bg-stone-900 dark:border-stone-600  ${
+      className={` top-0 h-screen shadow-none shadow-0 rounded-0 rounded-none duration-1000  pt-[1rem] left-0 transition-all    easein overflow-hidden  md:gap-[1.5rem] gap-[1rem] z-50    border-r  flex flex-col justify-start bg-stone-100/80 dark:bg-stone-900 dark:border-stone-600  ${
         isOpen
-          ? "w-full md:max-w-[8rem] max-w-[4rem] md:items-start items-center"
-          : "items-center w-fit md:max-w-[4.5rem] max-w-[3rem] "
+          ? "w-full md:max-w-[8rem] max-w-[3rem] md:items-start items-center md:min-w-[10rem] min-w-[3.5rem] "
+          : "items-center w-fit md:max-w-[4.5rem] max-w-[3rem] min-w-[3.5rem]"
       }`}
     >
       <Image
@@ -101,7 +101,7 @@ const Nav: React.FC = () => {
         alt="logo"
         width={100}
         height={150}
-        className="rounded-md md:p-4 p-2 h-[4.5rem] w-[4.5rem]"
+        className="rounded-xl overflow-hidden   h-[3rem] w-[3rem] mx-auto"
       />
       <div
         className="   flex flex-col w-full"
@@ -111,7 +111,7 @@ const Nav: React.FC = () => {
         {navIcons.map(({ id, icon, label }) => (
           <div
             key={id}
-            className={` transition-all  duration-1000 flex items-center     hover:backdrop-brightness-95  lg:p-3 p-2 py-3    h-fit cursor-pointer hover:border-r-2 hover:border-slate-500 md:p-4 p-2  ${
+            className={` transition-all  duration-1000 flex items-center     hover:backdrop-brightness-95  lg:p-3 p-2 py-3    h-fit cursor-pointer border-r-4 hover:border-slate-500 border-transparent md:p-4   ${
               isOpen
                 ? "gap-3 w-full md:justify-start justify-center"
                 : "gap-0 w-full justify-center"
@@ -130,8 +130,8 @@ const Nav: React.FC = () => {
             <span
               className={`  transition-all   ${
                 isOpen
-                  ? "opacity-1  w-[4rem] md:block hidden "
-                  : "opacity-0 w-0 min-w-[0rem] md:block hidden  scale-[60%] md:scale-100 md:block hidden "
+                  ? "opacity-1  w-[5rem] md:block hidden "
+                  : "opacity-0 w-0 min-w-[0rem]   scale-[60%] md:scale-100 md:block hidden "
               }`}
             >
               {label}
@@ -140,7 +140,7 @@ const Nav: React.FC = () => {
         ))}
       </div>
       <button
-        className={` transition-all  flex items-center duration-1000  md:justify-start justify-center hover:backdrop-brightness-95  lg:p-3 p-2 py-3    h-fit cursor-pointer hover:border-r hover:border-slate-500 md:p-4 p-2  ${
+        className={` transition-all  flex items-center duration-1000  md:justify-start justify-center hover:backdrop-brightness-95  lg:p-3 p-2 py-3    h-fit cursor-pointer hover:border-r-4 hover:border-slate-500 md:p-4 p-2  ${
           isOpen ? "gap-3 w-full" : "gap-0 w-full "
         }`}
         onClick={handleToggle}

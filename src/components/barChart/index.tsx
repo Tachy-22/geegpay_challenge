@@ -147,7 +147,7 @@ const BarChartUi = () => {
   };
 
   return (
-    <Card className="border-0 shadow-md md:max-h-full min-h-fit  h-full   ">
+    <Card className="border-0 shadow-md md:max-h-[50rem] min-h-fit  h-full   ">
       <div className="w-full  max-h-full h-full  flex flex-col rounded-xl  p-4 border-0 shadow-md ">
         <div className=" md:w-[98%]  w-full rounded-xl p-2 flex justify-between items-center  ">
           <h2 className="w-full font-semibold">Sales Trends</h2>
@@ -176,7 +176,6 @@ const BarChartUi = () => {
                 aria-label="Table Columns"
                 closeOnSelect={false}
                 className="  rounded-xl  "
-               
               >
                 <DropdownItem onClick={() => handleRangeChange("daily")}>
                   Daily
@@ -194,7 +193,7 @@ const BarChartUi = () => {
         <svg style={{ height: 0 }}>
           <defs>
             <linearGradient id="myGradient2" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#06f56abe" />
+              <stop offset="0%" stopColor="#25944a" />
               <stop offset="80%" stopColor="#22f8a633" />
               <stop offset="90%" stopColor="#34eea733" />
               <stop offset="100%" stopColor="#08fd9f3b" />

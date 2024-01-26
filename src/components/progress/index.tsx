@@ -85,6 +85,7 @@ export default function Progress() {
 
     return () => {
       if (containerRef.current) {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         observer.unobserve(containerRef.current);
       }
     };
@@ -92,8 +93,9 @@ export default function Progress() {
 
   return (
     <Card className="py-4 h-full  w-full  border-0 ">
-      <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+      <CardHeader className="pb-0 pt-2 px-4  items-start w-full flex justify-between ">
         <h4 className="font-bold text-large">Top Platform </h4>
+        <p className="text-green-500 ">See more</p>
       </CardHeader>
       <CardBody className="py- overflow-y-auto max-h-[27rem]">
         {progressBarData.slice(0, visibleItems).map((item, index) => (
@@ -102,10 +104,6 @@ export default function Progress() {
           </div>
         ))}
       </CardBody>
-      <CardFooter>
-        <div className="">badge</div>
-        <div className="">vs. previous month</div>
-      </CardFooter>
     </Card>
   );
 }

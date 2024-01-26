@@ -1,15 +1,16 @@
+import KPIs from "@/components/KPIs";
+import BarChartUi from "@/components/barChart";
+import Header from "@/components/header";
+import Progress from "@/components/progress";
+import DataTable from "@/components/table";
 import Image from "next/image";
-import DataTable from "./components/table";
-import BarChartUi from "./components/barChart";
-import KPIs from "./components/KPIs";
-import Progress from "./components/progress";
-import Header from "./components/header";
+
 
 export default function Home() {
   return (
     <main className="flex flex-col gap-3 justify-start items-center  relative   overflow-hidden h-screen bg-gray-100 dark:bg-stone-950">
       <Header />
-      <div className=" flex px-[1.5rem]  pt-[5rem]  h-full flex-col gap-6  w-full  overflow-y-auto -">
+      <div className=" flex md:px-[1rem] lg:px-[2rem] px-[0.5rem]  md:pt-[6rem] sm:pt-[10rem] pt-[6rem]  h-full flex-col gap-6  w-full  overflow-y-auto -">
         <section className="grid xl:grid-cols-3  grid-cols-1  gap-6  ">
           <div className="xl:col-span-2  col-span-1 order-last xl:order-first h-full ">
             <BarChartUi />
