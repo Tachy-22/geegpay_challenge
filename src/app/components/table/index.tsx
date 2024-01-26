@@ -157,14 +157,16 @@ export default function DataTable() {
       case "date":
         return (
           <div className="flex flex-col">
-            <p className="text-bold text-sm capitalize">{cellValue}</p>
+            <p className="text-bold text-sm capitalize text-gray-500 gray-300/50">
+              {cellValue}
+            </p>
           </div>
         );
       case "status":
         return (
           <Chip
             className="capitalize"
-            color={userStatus}
+            color={`${cellValue === "paid" ? "success" : "danger"}`}
             size="sm"
             variant="flat"
           >
@@ -173,9 +175,9 @@ export default function DataTable() {
         );
       case "invoice":
         return (
-          <div className="text-gray-300 flex gap-2 ">
+          <div className=" gray-300/50 flex gap-2 ">
             <File className="text-gray-300" />
-            <p className="text-black">View</p>
+            <p className=" gray-400/90">View</p>
           </div>
         );
       default:
@@ -222,13 +224,16 @@ export default function DataTable() {
 
   const topContent = React.useMemo(() => {
     return (
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 ">
         <div className="flex justify-between gap-3 items-end">
           <Input
-            variant="bordered"
+            variant="faded"
             size="sm"
+            radius="full"
             isClearable
-            className="w-full sm:max-w-[44%] bg-white"
+            classNames={{
+              base: ["max-w-[40rem]"],
+            }}
             placeholder="Search by name..."
             startContent={<SearchIcon size={18} />}
             value={filterValue}
@@ -241,8 +246,8 @@ export default function DataTable() {
               <DropdownTrigger className="hidden sm:flex">
                 <Button
                   endContent={<ChevronDownIcon className="text-sm" />}
-                  variant="solid"
-                  className="bg-blue-400 text-white"
+                  variant="ghost"
+                  color="default"
                 >
                   Status
                 </Button>
@@ -268,8 +273,9 @@ export default function DataTable() {
               <DropdownTrigger className="hidden sm:flex">
                 <Button
                   endContent={<ChevronDownIcon className="text-sm" />}
-                  variant="solid"
-                  className="bg-blue-400 text-white"
+                  variant="faded"
+                  className=" text-white"
+                  color="primary"
                 >
                   Columns
                 </Button>
@@ -371,12 +377,12 @@ export default function DataTable() {
   return (
     <div className="  w-full">
       <Table
-        aria-label="Example table with custom cells, pagination and sorting"
+        aria-label="Example table with custom cells, pagination and sorting "
         isHeaderSticky
         bottomContent={bottomContent}
         bottomContentPlacement="outside"
         classNames={{
-          wrapper: "max-h-[382px]",
+          wrapper: "max-h-[382px] ",
         }}
         selectedKeys={selectedKeys}
         selectionMode="multiple"

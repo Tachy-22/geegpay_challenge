@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Nav from "./components/nav";
+import Header from "./components/header";
+import NextProvider from "./provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,9 +19,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} relative flex `}>
-        <Nav />
-        <div className="max-h-screen overflow-y-auto"> {children}</div>
+      <body className={`${inter.className}  `}>
+        <NextProvider>
+          <div className="flex relative h-screen overflow-hidden w-screen">
+            <Nav />
+            <div className="max-h-screen overflow-hidden"> {children}</div>{" "}
+          </div>
+        </NextProvider>
       </body>
     </html>
   );

@@ -9,4 +9,73 @@
   }
 }
 
+.carousel-primary:hover,
+.carousel-primary:hover~.carousel-secondary {
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
+}
 
+.carousel-secondary:hover {
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+.scroll-container:hover>.carousel-primary:not(:hover) {
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+
+.carousel-primary {
+  justify-content: space-between;
+  animation: scroll-horizontal 20s linear infinite;
+}
+
+
+
+
+
+@keyframes scroll-horizontal {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+
+}
+
+.scrollVisible {
+  scrollbar-color: rgb(50, 49, 49) transparent;
+}
+
+
+@-moz-document url-prefix() {
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0) transparent;
+
+
+  }
+
+  .scrollVisible {
+    scrollbar-color: rgb(50, 49, 49) transparent;
+  }
+}
+
+/* * {
+  background: #06f56abe
+} */

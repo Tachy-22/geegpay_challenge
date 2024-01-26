@@ -91,7 +91,7 @@ export default function Progress() {
   }, [containerRef]);
 
   return (
-    <Card className="py-4 h-full  w-full  border-0">
+    <Card className="py-4 h-full  w-full  border-0 dark:bg-indigo-950">
       <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
         <h4 className="font-bold text-large">Top Platform </h4>
       </CardHeader>
