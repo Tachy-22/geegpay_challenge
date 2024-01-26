@@ -154,7 +154,7 @@ const BarChartUi = () => {
   };
 
   return (
-    <Card className="border-0 shadow-md md:max-h-[50rem] min-h-[10rem] max-h-[20rem]  h-full   ">
+    <Card className="border-0 shadow-md md:max-h-[30rem] min-h-[10rem] max-h-[20rem]  h-full   ">
       <div className="w-full  max-h-full h-full  flex flex-col rounded-xl  p-4 border-0 shadow-md ">
         <div className=" md:w-[98%]  w-full rounded-xl p-2 flex justify-between items-center  ">
           <Skeleton className="rounded-md" isLoaded={hasLoaded}>
@@ -222,7 +222,7 @@ const BarChartUi = () => {
           isLoaded={hasLoaded}
           className={` ${
             hasLoaded ? "hidden" : ""
-          } rounded-xl md:max-h-[38rem] max-h-[30rem] md:min-h-[30rem] min-h-[24rem] h-full w-full "`}
+          } rounded-xl  max-h-[20rem]  min-h-[15rem] h-full w-full "`}
         />
 
         <div
