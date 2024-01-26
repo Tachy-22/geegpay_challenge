@@ -34,7 +34,7 @@ interface NavIcon {
 
 const navIcons: NavIcon[] = [
   { id: 1, icon: <Element3 />, label: "Layout" },
-  { id: 2, icon: <TrendUp />, label: "Info" },
+  { id: 2, icon: <TrendUp />, label: "Trends" },
   { id: 3, icon: <Profile2User />, label: "Members" },
   { id: 4, icon: <Box />, label: "Settings" },
   { id: 5, icon: <DiscountShape />, label: "Discount" },
